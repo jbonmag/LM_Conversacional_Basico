@@ -1,0 +1,26 @@
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Training outputs
+results/
+trained_model/
+trained_model.zip
+checkpoints/
+runs/
+wandb/
+
+# Large local data/artifacts
+data/
+outputs/
+*.bin
+*.safetensors
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
