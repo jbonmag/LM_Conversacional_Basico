@@ -74,10 +74,4 @@ python lm_conversacional_basico.py --prompt "Hello, how are you?"
 | `--batch-size` | Batch por dispositivo | `2` |
 | `--output-dir` | Carpeta de salida del modelo | `trained_model` |
 
-## Notas
 
-El modelo entrenado y los checkpoints no se versionan en Git porque pueden ocupar mucho espacio. Para conservar un resultado, guarda la carpeta indicada en `--output-dir` fuera del repositorio o súbela a un registro de modelos.
-
-## Seguridad
-
-El proyecto no necesita tokens para ejecutarse con los recursos públicos usados por defecto. No guardes credenciales en notebooks, scripts ni salidas de ejecución.
