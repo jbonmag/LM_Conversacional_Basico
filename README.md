@@ -1,32 +1,32 @@
-# LM Conversacional Basico
+# Basic Conversational Language Model
 
-Proyecto de fine-tuning básico de un modelo de lenguaje conversacional usando Hugging Face Transformers. El ejemplo parte de `distilgpt2` y del dataset público `daily_dialog` para entrenar un modelo causal pequeño orientado a respuestas conversacionales simples.
+Basic fine-tuning project for a conversational language model using Hugging Face Transformers. The example starts from `distilgpt2` and the public `daily_dialog` dataset to train a small causal language model for simple conversational responses.
 
-## Objetivo
+## Objective
 
-Mostrar un flujo mínimo y reproducible para:
+Provide a minimal and reproducible workflow to:
 
-- Cargar un modelo base de lenguaje.
-- Preparar diálogos como texto de entrenamiento.
-- Tokenizar ejemplos con longitud fija.
-- Entrenar con `Trainer`.
-- Guardar el modelo resultante.
-- Probar una generación de texto opcional.
+- Load a base language model.
+- Prepare dialogues as training text.
+- Tokenize examples with a fixed sequence length.
+- Train with `Trainer`.
+- Save the resulting model.
+- Optionally run a quick text generation test.
 
-## Estructura
+## Structure
 
 ```text
 .
-├── LM_Conversacional_basico_FIX.ipynb
-├── lm_conversacional_basico.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+|-- LM_Conversacional_basico_FIX.ipynb
+|-- lm_conversacional_basico.py
+|-- requirements.txt
+|-- .gitignore
+`-- README.md
 ```
 
-## Instalación
+## Installation
 
-Se recomienda usar un entorno virtual:
+A virtual environment is recommended:
 
 ```bash
 python -m venv .venv
@@ -34,7 +34,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-En Linux o macOS:
+Linux or macOS:
 
 ```bash
 python -m venv .venv
@@ -42,36 +42,42 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Uso
+## Usage
 
-Entrenamiento básico:
+Basic training:
 
 ```bash
 python lm_conversacional_basico.py
 ```
 
-Entrenamiento con menos muestras para una prueba rápida:
+Quick training with fewer examples:
 
 ```bash
 python lm_conversacional_basico.py --train-samples 100 --epochs 1
 ```
 
-Entrenamiento y prueba de generación:
+Training plus a generation test:
 
 ```bash
 python lm_conversacional_basico.py --prompt "Hello, how are you?"
 ```
 
-## Parámetros principales
+## Main Parameters
 
-| Parámetro | Descripción | Valor por defecto |
+| Parameter | Description | Default |
 | --- | --- | --- |
-| `--model-name` | Modelo causal base | `distilgpt2` |
-| `--dataset-name` | Dataset de entrenamiento | `daily_dialog` |
-| `--train-samples` | Número máximo de diálogos | `1000` |
-| `--max-length` | Longitud máxima de tokens | `128` |
-| `--epochs` | Épocas de entrenamiento | `1` |
-| `--batch-size` | Batch por dispositivo | `2` |
-| `--output-dir` | Carpeta de salida del modelo | `trained_model` |
+| `--model-name` | Base causal language model | `distilgpt2` |
+| `--dataset-name` | Training dataset | `daily_dialog` |
+| `--train-samples` | Maximum number of dialogues | `1000` |
+| `--max-length` | Maximum token length | `128` |
+| `--epochs` | Training epochs | `1` |
+| `--batch-size` | Per-device batch size | `2` |
+| `--output-dir` | Model output directory | `trained_model` |
 
+## Notes
 
+The trained model and checkpoints are not versioned because they can become large. To preserve a result, store the output directory outside the repository or publish it to a model registry.
+
+## Security
+
+The default setup uses public resources and does not require tokens. Do not store credentials in notebooks, scripts or execution outputs.
