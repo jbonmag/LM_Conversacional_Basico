@@ -54,4 +54,4 @@ The trained model is not versioned (`trained_model/` is in `.gitignore`).
 
 ## License
 
-DailyDialog is released under CC BY-NC-SA 4.0, so models trained on it are for non-commercial use.
+The code is under the [MIT license](LICENSE). The data is not: DailyDialog is released under CC BY-NC-SA 4.0, so models trained on it are for non-commercial use.
